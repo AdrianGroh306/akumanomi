@@ -1,16 +1,35 @@
 import { useState } from 'react';
-import { fruits } from '../../data/fruits';
+import { useDevilFruitsQuery, Fruit } from '../../api/fetchDevilFruits'; 
+import defaultImage from '../../assets/devil_fruit_.png';
+
+const defaultFruit: Fruit = {
+    id: 0,
+    name: '???',
+    type: 'Unknown',
+    description: 'Click the button to find your Devil Fruit!',
+    user: 'Unknown',
+    avatarSrc: defaultImage,
+    meaning: undefined,
+    previousOwner: undefined,
+};
 
 export const useFindDevilFruit = () => {
-    const [fruit, setFruit] = useState<typeof fruits[0] | null>(null);
+    const { data: allFruits, isLoading, isError } = useDevilFruitsQuery();
+    const [randomFruit, setRandomFruit] = useState<Fruit>(defaultFruit);
 
     const findRandomFruit = () => {
-        const randomIndex = Math.floor(Math.random() * fruits.length);
-        setFruit(fruits[randomIndex]);
+        if (allFruits && allFruits.length > 0 && !isLoading && !isError) {
+            const randomIndex = Math.floor(Math.random() * allFruits.length);
+            setRandomFruit(allFruits[randomIndex]);
+        } else {
+            
+        }
     };
 
     return {
-        fruit,
-        findRandomFruit
+        randomFruit,
+        findRandomFruit,
+        isLoadingFruits: isLoading,
+        fruitsError: isError 
     };
 };

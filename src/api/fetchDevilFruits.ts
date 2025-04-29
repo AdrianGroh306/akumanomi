@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-interface Fruit {
+export interface Fruit {
   id: number;
   name: string;
   type: string;
