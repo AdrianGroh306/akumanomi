@@ -5,6 +5,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Turns the user's body into rubber",
       user: "Monkey D. Luffy",
+      avatarSrc: "/images/fruits/gomu-gomu-no-mi.png",
     },
     {
       id: 2,
@@ -12,6 +13,7 @@ export const fruits = [
       type: "Logia",
       description: "Allows the user to create, control, and become fire",
       user: "Sabo",
+      avatarSrc: "/images/fruits/mera-mera-no-mi.png",
     },
     {
       id: 3,
@@ -19,6 +21,7 @@ export const fruits = [
       type: "Zoan",
       description: "Allows the user to transform into a human hybrid",
       user: "Tony Tony Chopper",
+      avatarSrc: "/images/fruits/hito-hito-no-mi.png",
     },
     {
       id: 4,
@@ -26,6 +29,7 @@ export const fruits = [
       type: "Logia",
       description: "Allows the user to create and control darkness",
       user: "Marshall D. Teach",
+      avatarSrc: "/images/fruits/yami-yami-no-mi.png",
     },
     {
       id: 5,
@@ -33,6 +37,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Creates powerful shockwaves, able to destroy the world",
       user: "Edward Newgate",
+      avatarSrc: "/images/fruits/gura-gura-no-mi.png",
     },
     {
       id: 6,
@@ -40,6 +45,7 @@ export const fruits = [
       type: "Logia",
       description: "Allows the user to become and control light",
       user: "Borsalino (Kizaru)",
+      avatarSrc: "/images/fruits/pika-pika-no-mi.png",
     },
     {
       id: 7,
@@ -47,6 +53,7 @@ export const fruits = [
       type: "Logia",
       description: "Allows the user to create and control ice",
       user: "Kuzan (Aokiji)",
+      avatarSrc: "/images/fruits/hie-hie-no-mi.png",
     },
     {
       id: 8,
@@ -54,6 +61,7 @@ export const fruits = [
       type: "Logia",
       description: "Allows the user to create, control, and become magma",
       user: "Sakazuki (Akainu)",
+      avatarSrc: "/images/fruits/magu-magu-no-mi.png",
     },
     {
       id: 9,
@@ -61,6 +69,7 @@ export const fruits = [
       type: "Logia",
       description: "Allows the user to create, control, and become sand",
       user: "Crocodile",
+      avatarSrc: "/images/fruits/suna-suna-no-mi.png",
     },
     {
       id: 10,
@@ -68,6 +77,7 @@ export const fruits = [
       type: "Mythical Zoan",
       description: "Allows the user to transform into a phoenix",
       user: "Marco",
+      avatarSrc: "/images/fruits/tori-tori-no-mi-phoenix.png",
     },
     {
       id: 11,
@@ -75,6 +85,7 @@ export const fruits = [
       type: "Zoan",
       description: "Allows the user to transform into a bison",
       user: "Dalton",
+      avatarSrc: "/images/fruits/ushi-ushi-no-mi-bison.png",
     },
     {
       id: 12,
@@ -82,6 +93,7 @@ export const fruits = [
       type: "Zoan",
       description: "Allows the user to transform into a wolf",
       user: "Jabra",
+      avatarSrc: "/images/fruits/inu-inu-no-mi-wolf.png",
     },
     {
       id: 13,
@@ -89,6 +101,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user to create and control poison",
       user: "Magellan",
+      avatarSrc: "/images/fruits/doku-doku-no-mi.png",
     },
     {
       id: 14,
@@ -96,6 +109,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user to repel anything they touch",
       user: "Bartholomew Kuma",
+      avatarSrc: "/images/fruits/nikyu-nikyu-no-mi.png",
     },
     {
       id: 15,
@@ -103,6 +117,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user to manipulate hormones",
       user: "Emporio Ivankov",
+      avatarSrc: "/images/fruits/horu-horu-no-mi.png",
     },
     {
       id: 16,
@@ -110,6 +125,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user to create and manipulate strings",
       user: "Donquixote Doflamingo",
+      avatarSrc: "/images/fruits/ito-ito-no-mi.png",
     },
     {
       id: 17,
@@ -117,6 +133,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user to create a room to manipulate anything within",
       user: "Trafalgar D. Water Law",
+      avatarSrc: "/images/fruits/ope-ope-no-mi.png",
     },
     {
       id: 18,
@@ -124,6 +141,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user to create invisible barriers",
       user: "Bartolomeo",
+      avatarSrc: "/images/fruits/bari-bari-no-mi.png",
     },
     {
       id: 19,
@@ -131,6 +149,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user's body parts to explode without harm",
       user: "Gem (Mr. 5)",
+      avatarSrc: "/images/fruits/bomu-bomu-no-mi.png",
     },
     {
       id: 20,
@@ -138,6 +157,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Makes the user's body extremely slippery",
       user: "Alvida",
+      avatarSrc: "/images/fruits/sube-sube-no-mi.png",
     },
     {
       id: 21,
@@ -145,6 +165,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user to change their weight",
       user: "Mikita (Miss Valentine)",
+      avatarSrc: "/images/fruits/kilo-kilo-no-mi.png",
     },
     {
       id: 22,
@@ -152,6 +173,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Revives the user once after death",
       user: "Brook",
+      avatarSrc: "/images/fruits/yomi-yomi-no-mi.png",
     },
     {
       id: 23,
@@ -159,6 +181,7 @@ export const fruits = [
       type: "Paramecia",
       description: "Allows the user to lock onto targets",
       user: "Vander Decken IX",
+      avatarSrc: "/images/fruits/mato-mato-no-mi.png",
     },
     {
       id: 24,
@@ -166,6 +189,7 @@ export const fruits = [
       type: "Zoan",
       description: "Allows the user to transform into an axolotl",
       user: "Smiley",
+      avatarSrc: "/images/fruits/sara-sara-no-mi-axolotl.png",
     },
     {
       id: 25,
@@ -173,5 +197,6 @@ export const fruits = [
       type: "Logia",
       description: "Allows the user to create, control, and become gas",
       user: "Caesar Clown",
+      avatarSrc: "/images/fruits/gasu-gasu-no-mi.png",
     },
   ];
