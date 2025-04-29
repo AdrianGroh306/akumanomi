@@ -39,18 +39,17 @@ interface ApiPageResponse {
   errors?: Array<{ message: string; locations?: any }>;
 }
 
-// Fetches a single page of devil fruits using page as a direct argument
 const fetchDevilFruitsPage = async (page: number = 1): Promise<ApiPageResponse> => {
   try {
-    const res = await fetch('/graphql', {
+    const res = await fetch('/graphql', { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         query: `
-          query GetDevilFruitsPage($page: Int) { # Define page variable
-            devilFruits(page: $page) { # Use page as a direct argument
+          query GetDevilFruitsPage($page: Int) { 
+            devilFruits(page: $page) { 
               info { 
                 count
                 pages
@@ -71,7 +70,7 @@ const fetchDevilFruitsPage = async (page: number = 1): Promise<ApiPageResponse> 
           }
         `,
         variables: {
-          page: page // Pass the page number
+          page: page 
         }
       }),
     });
@@ -99,19 +98,16 @@ const fetchDevilFruitsPage = async (page: number = 1): Promise<ApiPageResponse> 
   }
 };
 
-// Fetches all devil fruits by handling pagination using page numbers and sorts them by ID
 const fetchAllDevilFruits = async (): Promise<Fruit[]> => {
   let allApiFruits: ApiDevilFruit[] = [];
   let totalPages = 1;
 
   try {
-    // Fetch the first page to get the total number of pages
     const firstPageResponse = await fetchDevilFruitsPage(1);
     totalPages = firstPageResponse.data?.devilFruits?.info.pages ?? 1;
     allApiFruits = firstPageResponse.data?.devilFruits?.results ?? [];
 
     if (totalPages <= 1 || allApiFruits.length === 0) {
-       // If only one page or first page failed, sort and return what we have
        const fruits: Fruit[] = allApiFruits.map((df) => ({
          id: df.id,
          name: df.englishName,
@@ -127,16 +123,13 @@ const fetchAllDevilFruits = async (): Promise<Fruit[]> => {
        return fruits;
     }
 
-    // Create promises for the remaining pages (from 2 to totalPages)
     const pagePromises: Promise<ApiPageResponse>[] = [];
     for (let page = 2; page <= totalPages; page++) {
       pagePromises.push(fetchDevilFruitsPage(page));
     }
 
-    // Fetch remaining pages in parallel
     const remainingPageResponses = await Promise.all(pagePromises);
 
-    // Collect results from remaining pages
     remainingPageResponses.forEach(response => {
       const results = response.data?.devilFruits?.results;
       if (results) {
@@ -144,7 +137,6 @@ const fetchAllDevilFruits = async (): Promise<Fruit[]> => {
       }
     });
 
-    // Map ApiDevilFruit to Fruit interface
     const allFruits: Fruit[] = allApiFruits.map((df) => ({
       id: df.id,
       name: df.englishName,

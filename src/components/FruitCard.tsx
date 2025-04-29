@@ -17,8 +17,8 @@ interface FruitCardProps {
 
 export const FruitCard: React.FC<FruitCardProps> = ({ fruit }) => {
   return (
-    <div className="border rounded-lg p-4 shadow-md bg-white flex flex-col items-center">
-      {fruit.avatarSrc && <img src={fruit.avatarSrc} alt={fruit.name} className="w-32 h-32 object-cover rounded-full mb-4" />}
+    <div className="rounded-lg p-4 shadow-2xl bg-white flex flex-col items-center">
+      {fruit.avatarSrc && <img src={fruit.avatarSrc} alt={fruit.name} className="w-32 h-32 object-cover rounded-4xl mb-4" />}
       <h2 className="text-xl font-bold mb-2 text-center">{fruit.name}</h2>
       <p><span className="font-semibold">Type:</span> {fruit.type}</p>
       {fruit.meaning && <p><span className="font-semibold">Meaning:</span> {fruit.meaning}</p>}
