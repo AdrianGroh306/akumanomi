@@ -13,7 +13,7 @@ export const FindDevilFruit = () => {
                     <p className="mt-2 text-sm text-gray-600">User: {fruit.user}</p>
                 </div>
             )}
-            <button onClick={findRandomFruit} className="px-6 py-3 bg-indigo-600 text-white rounded-lg text-lg hover:scale-105 transform transition">
+            <button onClick={findRandomFruit} className="px-6 py-3 my-12 bg-indigo-600 text-white rounded-lg text-lg hover:scale-105 transform transition">
                 Find your DEVILFRUIT
             </button>
         </main>)
