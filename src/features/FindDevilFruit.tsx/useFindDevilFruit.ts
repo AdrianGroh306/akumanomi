@@ -5,9 +5,9 @@ import defaultImage from '../../assets/devil_fruit_.png';
 const defaultFruit: Fruit = {
     id: 0,
     name: '???',
-    type: 'Unknown',
+    type: 'unknown',
     description: 'Click the button to find your Devil Fruit!',
-    user: 'Unknown',
+    user: 'unknown',
     avatarSrc: defaultImage,
     meaning: undefined,
     previousOwner: undefined,

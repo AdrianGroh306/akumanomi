@@ -25,6 +25,11 @@ const getTypeStyles = (type: string | undefined) => {
         borderColor: 'border-orange-400',
         textColor: 'text-orange-500',
       };
+    case 'unknown':
+      return {
+        borderColor: 'border-gray-400',
+        textColor: 'text-gray-500',
+      };
     default:
       return {
         borderColor: 'border-pink-400',
