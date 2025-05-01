@@ -1,30 +1,31 @@
+import React, { useState } from 'react';
+import { Fruit } from '../api/fetchDevilFruits';
 import { FruitCard } from './FruitCard';
-
-interface Fruit {
-  id: number;
-  name: string;
-  type: string;
-  description: string;
-  user: string;
-  avatarSrc?: string;
-  meaning?: string;
-  previousOwner?: string;
-}
+import { FruitDetailModal } from './FruitCardDetailsModal';
 
 interface FruitGridProps {
   fruits: Fruit[];
 }
 
-export const FruitGrid = ({ fruits }: FruitGridProps) => {
-  if (!fruits) {
-    return <p>No fruits to display.</p>;
-  }
+export const FruitGrid: React.FC<FruitGridProps> = ({ fruits }) => {
+  const [selectedFruit, setSelectedFruit] = useState<Fruit | null>(null);
+
+  const handleCardClick = (fruit: Fruit) => {
+    if (fruit.id !== 0) {
+      setSelectedFruit(fruit);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setSelectedFruit(null);
+  };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
       {fruits.map((fruit) => (
-        <FruitCard key={fruit.id} fruit={fruit} />
+        <FruitCard key={fruit.id} fruit={fruit} onClick={handleCardClick} />
       ))}
+      <FruitDetailModal fruit={selectedFruit} onClose={handleCloseModal} />
     </div>
   );
 };
