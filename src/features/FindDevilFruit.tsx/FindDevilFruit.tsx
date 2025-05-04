@@ -21,7 +21,7 @@ export const FindDevilFruit = () => {
     return (
         <div>
             <main className="flex-grow flex flex-col items-center p-8 text-center">
-                <h1 className="text-3xl font-semibold mb-8">Find Your Devil Fruit!</h1>
+                <h1 className="text-3xl dark:text-white font-semibold mb-8">Find Your Devil Fruit!</h1>
 
                 <div className="mb-8 w-full max-w-xs">
                     {randomFruit && <FruitCard fruit={randomFruit} onClick={handleCardClick} />} 

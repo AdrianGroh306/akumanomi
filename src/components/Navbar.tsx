@@ -1,20 +1,24 @@
 import { Link } from 'react-router-dom';
 import logoImage from '../assets/akumanomi.avif';
+import { ThemeSwitch } from './ThemeSwitch';
 
 export const Navbar = () => {
   return (
     <header className="p-4 flex justify-between items-center">
-      <Link to='/'> 
+      <Link to="/">
         <img src={logoImage} alt="Akumanomi Logo" className="h-10" />
       </Link>
-      <nav>
-        <Link to="/hub" className="text-lg font-bold hover:underline pr-4"> 
-          Hub
-        </Link>
-        <Link to="/" className="text-lg font-bold hover:underline pr-12">
-          Find Fruit
-        </Link>
-      </nav>
+      <div className='flex justify-center items-center'>
+        <nav className="flex space-x-4">
+          <Link to="/hub" className="text-lg dark:text-white font-bold hover:underline">
+            Hub
+          </Link>
+          <Link to="/" className="text-lg dark:text-white font-bold hover:underline">
+            Find Fruit
+          </Link>
+        </nav>
+        <ThemeSwitch />
+      </div>
     </header>
   );
 };

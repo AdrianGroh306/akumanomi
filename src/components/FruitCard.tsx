@@ -60,7 +60,7 @@ export const FruitCard: React.FC<FruitCardProps> = ({ fruit, onClick }) => {
   return (
     <motion.div 
       layoutId={`fruit-card-${id}`} 
-      className={`relative bg-white rounded-lg shadow-md overflow-hidden text-center p-4 transition-transform transform hover:scale-105 cursor-pointer h-full flex flex-col border-2 ${borderColor}`} 
+      className={`relative bg-white dark:bg-neutral-900 rounded-lg shadow-md overflow-hidden text-center p-4 transition-transform transform hover:scale-105 cursor-pointer h-full flex flex-col border-2 ${borderColor}`} 
       onClick={handleCardClick} 
     >
       <div className="absolute top-2 left-2 bg-gray-100 bg-opacity-80 text-gray-700 text-xs font-bold px-2 py-1 rounded-full z-10"> 
@@ -76,7 +76,7 @@ export const FruitCard: React.FC<FruitCardProps> = ({ fruit, onClick }) => {
          />
        </div>
       <div className="mt-auto pt-2 border-t border-gray-200"> 
-        <h3 className="text-lg font-semibold text-gray-800 min-h-16 flex items-center justify-center"> 
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white min-h-16 flex items-center justify-center"> 
           {name || '???'}
         </h3>
         <p className={`text-sm font-medium mt-1 ${textColor}`}>{type || 'Unknown'}</p> 

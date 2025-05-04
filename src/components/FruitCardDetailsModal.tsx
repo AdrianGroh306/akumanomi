@@ -19,11 +19,11 @@ export const FruitDetailModal: React.FC<FruitDetailModalProps> = ({ fruit, onClo
 
   return (
     <div 
-      className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 p-4"
+      className="fixed inset-0 bg-black/50 dark:bg-white/60  flex justify-center items-center z-50 p-4"
       onClick={onClose}
     >
       <div 
-        className="bg-white rounded-lg shadow-xl p-6 max-w-3xl w-full flex flex-col md:flex-row gap-6 relative"
+        className="bg-white dark:bg-neutral-900 rounded-lg shadow-xl p-6 max-w-3xl w-full flex flex-col md:flex-row gap-6 relative"
         onClick={handleContentClick}
       >
         <button 
@@ -39,24 +39,24 @@ export const FruitDetailModal: React.FC<FruitDetailModalProps> = ({ fruit, onClo
         </div>
 
         <div className="text-gray-800 flex-grow overflow-y-auto max-h-[70vh]">
-          <h2 className="text-2xl font-bold mb-3">{fruit.name}</h2>
-          <p className="mb-1"><strong className="font-semibold text-purple-600">Type:</strong> {fruit.type || 'Unknown'}</p>
-          <p className="mb-4"><strong className="font-semibold text-purple-600">Current User:</strong> {fruit.user || 'Unknown'}</p>
+          <h2 className="text-2xl font-bold dark:text-white mb-3">{fruit.name}</h2>
+          <p className="mb-1 dark:text-white"><strong className="font-semibold text-purple-600">Type:</strong> {fruit.type || 'Unknown'}</p>
+          <p className="mb-4 dark:text-white"><strong className="font-semibold text-purple-600">Current User:</strong> {fruit.user || 'Unknown'}</p>
           
-          <h3 className="text-lg font-semibold mt-4 mb-2 border-b border-gray-300 pb-1 text-purple-700">Description</h3>
-          <p className="text-sm mb-4">{fruit.description || 'No description available.'}</p>
+          <h3 className="text-lg font-semibold mt-4 mb-2 border-b border-gray-300 pb-1 dark:text-white text-purple-700">Description</h3>
+          <p className="text-sm mb-4 dark:text-white">{fruit.description || 'No description available.'}</p>
           
           {fruit.meaning && (
             <>
               <h3 className="text-lg font-semibold mt-4 mb-2 border-b border-gray-300 pb-1 text-purple-700">Meaning</h3>
-              <p className="text-sm mb-4">{fruit.meaning}</p>
+              <p className="text-sm mb-4 dark:text-white">{fruit.meaning}</p>
             </>
           )}
 
           {fruit.previousOwner && (
              <>
               <h3 className="text-lg font-semibold mt-4 mb-2 border-b border-gray-300 pb-1 text-purple-700">Previous Owner</h3>
-              <p className="text-sm mb-4">{fruit.previousOwner}</p>
+              <p className="text-sm mb-4 dark:text-white">{fruit.previousOwner}</p>
              </>
           )}
         </div>
