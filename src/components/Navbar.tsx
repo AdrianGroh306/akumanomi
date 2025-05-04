@@ -6,7 +6,7 @@ export const Navbar = () => {
   return (
     <header className="p-4 flex justify-between items-center">
       <Link to="/">
-        <img src={logoImage} alt="Akumanomi Logo" className="h-10" />
+          <img src={logoImage} alt="Akumanomi Logo" className="h-10 object-contain" />
       </Link>
       <div className='flex justify-center items-center'>
         <nav className="flex space-x-4">
