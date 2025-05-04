@@ -1,7 +1,7 @@
 import React from 'react';
 import { Fruit } from '../api/fetchDevilFruits';
 import { motion } from 'framer-motion'; 
-import defaultImage from '../assets/devil_fruit_.png'; 
+import defaultImage from '../assets/devil_fruit_.avif'; 
 
 interface FruitCardProps {
   fruit: Fruit;

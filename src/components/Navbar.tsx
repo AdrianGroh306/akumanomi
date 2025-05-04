@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logoImage from '../assets/akumanomi.png';
+import logoImage from '../assets/akumanomi.avif';
 
 export const Navbar = () => {
   return (

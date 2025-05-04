@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { useDevilFruitsQuery, Fruit } from '../../api/fetchDevilFruits'; 
-import defaultImage from '../../assets/devil_fruit_.png';
+import { Fruit } from '../../api/fetchDevilFruits'; 
+import defaultImage from '../../assets/devil_fruit_.avif';
+import { useDevilFruitsContext } from '../../context/DevilFruitsContext';
 
 const defaultFruit: Fruit = {
     id: 0,
@@ -14,13 +15,13 @@ const defaultFruit: Fruit = {
 };
 
 export const useFindDevilFruit = () => {
-    const { data: allFruits, isLoading, isError } = useDevilFruitsQuery();
+    const { fruits, isLoading, error } = useDevilFruitsContext();
     const [randomFruit, setRandomFruit] = useState<Fruit>(defaultFruit);
 
     const findRandomFruit = () => {
-        if (allFruits && allFruits.length > 0 && !isLoading && !isError) {
-            const randomIndex = Math.floor(Math.random() * allFruits.length);
-            setRandomFruit(allFruits[randomIndex]);
+        if (fruits && fruits.length > 0 && !isLoading && !error) {
+            const randomIndex = Math.floor(Math.random() * fruits.length);
+            setRandomFruit(fruits[randomIndex]);
         } else {
             
         }
@@ -30,6 +31,6 @@ export const useFindDevilFruit = () => {
         randomFruit,
         findRandomFruit,
         isLoadingFruits: isLoading,
-        fruitsError: isError 
+        fruitsError: error 
     };
 };

@@ -78,7 +78,7 @@ export const HubView = () => {
                            <button
                            key={c}
                            onClick={() => setCategory(c)}
-                           className={`px-3 py-1 rounded-full text-sm font-medium transition cursor-pointer shadow-md ${
+                           className={`px-3 py-1 rounded-full text-sm font-medium transition-colors cursor-pointer shadow-md ${
                              category === c
                                ? `${typeStyles[c].activeBg} text-white`
                                : `bg-white ${typeStyles[c].text} ${typeStyles[c].hoverBg}`
