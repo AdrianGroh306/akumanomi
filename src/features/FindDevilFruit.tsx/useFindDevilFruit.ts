@@ -20,12 +20,10 @@ export const useFindDevilFruit = () => {
     const [isAnimating, setIsAnimating] = useState(false);
     const [animationPhase, setAnimationPhase] = useState<'idle' | 'shaking' | 'flipping'>('idle');
     
-    // Ref um aktuelle Werte zu speichern
     const currentFruitsRef = useRef(fruits);
     const currentLoadingRef = useRef(isLoading);
     const currentErrorRef = useRef(error);
     
-    // Refs aktuell halten
     useEffect(() => {
         currentFruitsRef.current = fruits;
         currentLoadingRef.current = isLoading;
@@ -37,14 +35,9 @@ export const useFindDevilFruit = () => {
             setIsAnimating(true);
             setAnimationPhase('shaking');
             
-            console.log('Animation gestartet, Früchte:', fruits?.length, 'Loading:', isLoading, 'Error:', error);
-            
-            // Bereits während der Wackel-Phase die neue Frucht auswählen und Bild preloaden
             let selectedFruit: Fruit | null = null;
-            
-            // Warten bis Früchte verfügbar sind und auswählen
             let attempts = 0;
-            const maxAttempts = 20; // 2 Sekunden bei 100ms Intervallen
+            const maxAttempts = 20;
             
             while (attempts < maxAttempts && !selectedFruit) {
                 const currentFruits = currentFruitsRef.current;
@@ -54,13 +47,10 @@ export const useFindDevilFruit = () => {
                 if (currentFruits && currentFruits.length > 0 && !currentLoading && !currentError) {
                     const randomIndex = Math.floor(Math.random() * currentFruits.length);
                     selectedFruit = currentFruits[randomIndex];
-                    console.log('Frucht ausgewählt und Bild wird preloaded:', selectedFruit.name);
                     
-                    // Bild im Hintergrund preloaden
                     if (selectedFruit.avatarSrc) {
                         const img = new Image();
                         img.src = selectedFruit.avatarSrc;
-                        console.log('Bild wird preloaded:', selectedFruit.avatarSrc);
                     }
                     break;
                 }
@@ -69,26 +59,20 @@ export const useFindDevilFruit = () => {
                 attempts++;
             }
             
-            // Falls keine Frucht gefunden wurde, verwende Standard
             if (!selectedFruit) {
                 selectedFruit = defaultFruit;
-                console.warn('Keine Früchte verfügbar nach', attempts, 'Versuchen, verwende Standardfrucht');
             }
             
-            // Längere, natürlichere Wackel-Phase (2s) - Bild lädt währenddessen
             await new Promise(resolve => setTimeout(resolve, 2000));
             
-            // Flip-Phase starten
             setAnimationPhase('flipping');
             
-            // Nach 0.6s die neue Frucht setzen (Bild sollte schon geladen sein)
             setTimeout(() => {
                 if (selectedFruit) {
-                    console.log('Neue Frucht angezeigt (Bild sollte bereits geladen sein):', selectedFruit.name);
                     setRandomFruit(selectedFruit);
                 }
             }, 600);
-            // Flip-Animation beenden (weitere 0.6s = 1.2s total)
+            
             await new Promise(resolve => setTimeout(resolve, 1200));
             
             setAnimationPhase('idle');

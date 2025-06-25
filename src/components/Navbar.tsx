@@ -16,6 +16,12 @@ export const Navbar = () => {
           <Link to="/" className="text-lg dark:text-white font-bold hover:underline">
             Find Fruit
           </Link>
+          <Link to="/find-character" className="text-lg dark:text-white font-bold hover:underline">
+            Find Character
+          </Link>
+          <Link to="/characters" className="text-lg dark:text-white font-bold hover:underline">
+            Characters
+          </Link>
         </nav>
         <ThemeSwitch />
       </div>
