@@ -1,6 +1,6 @@
 import { Character } from '../api/fetchCharacters';
-import { useState } from 'react';
-import defaultImage from '../assets/devil_fruit_.avif';
+import { useState, useEffect } from 'react';
+import defaultImage from '../assets/one_piece_character.png';
 
 interface CharacterCardProps {
   character: Character;
@@ -10,11 +10,17 @@ interface CharacterCardProps {
 export const CharacterCard = ({ character, onClick }: CharacterCardProps) => {
   const [imageError, setImageError] = useState(false);
 
+  // Reset image error when character changes
+  useEffect(() => {
+    setImageError(false);
+  }, [character.id]);
+
   const handleClick = () => {
     onClick(character);
   };
 
   const handleImageError = () => {
+    console.log('Image failed to load for character:', character.englishName, 'URL:', character.avatarSrc);
     setImageError(true);
   };
 

@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { Character } from '../../api/fetchCharacters'; 
 import { useCharactersContext } from '../../context/CharactersContext';
+import defaultImage from '../../assets/one_piece_character.png';
 
 const defaultCharacter: Character = {
     id: 0,
     englishName: '???',
     description: 'Click the button to find your Character!',
-    avatarSrc: '/default-character.png',
+    avatarSrc: defaultImage,
 };
 
 export const useFindCharacter = () => {

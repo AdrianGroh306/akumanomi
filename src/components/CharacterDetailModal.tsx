@@ -1,6 +1,6 @@
 import { Character } from '../api/fetchCharacters';
 import { useState } from 'react';
-import defaultImage from '../assets/devil_fruit_.avif';
+import defaultImage from '../assets/one_piece_character.png';
 
 interface CharacterDetailModalProps {
   character: Character | null;
